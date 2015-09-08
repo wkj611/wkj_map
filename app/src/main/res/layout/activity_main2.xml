@@ -42,6 +42,12 @@
         android:layout_below="@id/button10"
         android:text="show map"
         />
+    <Button
+        android:id="@+id/button12"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button11"
+        android:text="preference"/>
 
 
 </RelativeLayout>
