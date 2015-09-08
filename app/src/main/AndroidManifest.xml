@@ -6,14 +6,14 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
-    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.GET_TASKS" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
 
     <application
@@ -24,6 +24,7 @@
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="ue9j6Mvqp6ZfyUgGZbHpf5iS" />
+
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name" >
@@ -52,12 +53,13 @@
             android:name=".Main3Activity"
             android:label="@string/title_activity_main3" >
         </activity>
-
-
-
         <activity
             android:name=".Main4Activity"
             android:label="@string/title_activity_main4" >
+        </activity>
+        <activity
+            android:name=".Main5Activity"
+            android:label="@string/title_activity_main5" >
         </activity>
     </application>
 

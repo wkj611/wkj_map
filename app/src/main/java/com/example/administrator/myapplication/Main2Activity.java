@@ -19,7 +19,7 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
     MediaPlayer mPlayer;
     boolean flag = true;
     VideoView vPlayer;
-    Intent intent1,intent2;
+    Intent intent1,intent2,intent3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,17 +30,20 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
         Intent intent = getIntent();
         intent1 = new Intent(this,Main3Activity.class);
         intent2 = new Intent(this,Main4Activity.class);
+        intent3 = new Intent(this,Main5Activity.class);
         TextView textview2 = (TextView)findViewById(R.id.textview2);
         Button button7 = (Button)findViewById(R.id.button7);
         Button button8 = (Button)findViewById(R.id.button8);
         Button button9 = (Button)findViewById(R.id.button9);
         Button button10 = (Button)findViewById(R.id.button10);
         Button button11 = (Button)findViewById(R.id.button11);
+        Button button12 = (Button)findViewById(R.id.button12);
         button7.setOnClickListener(this);
         button8.setOnClickListener(this);
         button9.setOnClickListener(this);
         button10.setOnClickListener(this);
         button11.setOnClickListener(this);
+        button12.setOnClickListener(this);
         mPlayer = new MediaPlayer();
         try {
             mPlayer.setDataSource("/storage/sdcard1/pnty.mp3");
@@ -88,6 +91,9 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
             }break;
             case R.id.button11:{
                 startActivity(intent2);
+            }break;
+            case R.id.button12:{
+                startActivity(intent3);
             }break;
             default:;
         }
