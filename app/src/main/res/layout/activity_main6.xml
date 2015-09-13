@@ -1,0 +1,44 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.example.administrator.myapplication.Main6Activity">
+    <TextView
+        android:id="@+id/tvread"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="read text is below"/>
+
+    <EditText
+        android:id="@+id/edread"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvread"/>
+    <TextView
+        android:id="@+id/tvwrite"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edread"
+        android:text="please enter the text to write"/>
+    <EditText
+        android:id="@+id/edwrite"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvwrite"/>
+    <Button
+        android:id="@+id/read"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edwrite"
+        android:text="read"
+        />
+    <Button
+        android:id="@+id/write"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/read"
+        android:text="write"/>
+
+</RelativeLayout>

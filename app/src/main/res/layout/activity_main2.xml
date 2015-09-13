@@ -48,6 +48,12 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/button11"
         android:text="preference"/>
+    <Button
+        android:id="@+id/file"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button12"
+        android:text="file"/>
 
 
 </RelativeLayout>
