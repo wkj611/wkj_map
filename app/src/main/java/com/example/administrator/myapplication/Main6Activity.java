@@ -99,7 +99,7 @@ public class Main6Activity extends AppCompatActivity implements View.OnClickList
         int readnum;
         try{
             if(Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)){
-                File sdCardDir = new File(getNormalSDCardPath());
+                File sdCardDir = new File(getSDCardPath());
                 File targetFile = new File(sdCardDir, FILE_NAME);
                 FileInputStream fileInputStream = new FileInputStream(targetFile);
                 BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(fileInputStream));
