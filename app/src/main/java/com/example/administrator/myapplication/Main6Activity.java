@@ -1,5 +1,6 @@
 package com.example.administrator.myapplication;
 
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -8,14 +9,18 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.InputStreamReader;
 import java.io.PrintStream;
+import java.io.RandomAccessFile;
 
 public class Main6Activity extends AppCompatActivity implements View.OnClickListener{
     Button read,write;
     EditText edread,edwrite;
-    String FILE_NAME = "wkj.txt";
+    String FILE_NAME = "/wkj.txt";
 
 
     @Override
@@ -67,10 +72,15 @@ public class Main6Activity extends AppCompatActivity implements View.OnClickList
 
     private void mywrite(String s) {
         try{
-            FileOutputStream fileOutputStream = openFileOutput(FILE_NAME, MODE_APPEND);
-            PrintStream printStream = new PrintStream(fileOutputStream);
-            printStream.println(s);
-            printStream.close();
+            if(Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)){
+                File sdCardDir = Environment.getExternalStorageDirectory();
+                File targetFile = new File(sdCardDir.getCanonicalPath() + FILE_NAME);
+                System.out.println(sdCardDir.getCanonicalPath());
+                RandomAccessFile randomAccessFile = new RandomAccessFile(targetFile,"rw");
+                randomAccessFile.seek(targetFile.length());
+                randomAccessFile.write(s.getBytes());
+                randomAccessFile.close();
+            }
 
         }catch (Exception e){
             e.printStackTrace();
@@ -80,15 +90,18 @@ public class Main6Activity extends AppCompatActivity implements View.OnClickList
     private String myread() {
         int readnum;
         try{
-            FileInputStream fileInputStream = openFileInput(FILE_NAME);
-            byte[] buffer = new  byte[1024];
-            StringBuilder stringBuilder = new StringBuilder();
-            while ((readnum = fileInputStream.read(buffer))>0){
-                stringBuilder.append(new String(buffer,0,readnum));
+            if(Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)){
+                File sdCardDir = Environment.getExternalStorageDirectory();
+                FileInputStream fileInputStream = new FileInputStream(sdCardDir.getCanonicalPath()+FILE_NAME);
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(fileInputStream));
+                StringBuilder stringBuilder = new StringBuilder("");
+                String line = null;
+                while ((line = bufferedReader.readLine())!=null){
+                    stringBuilder.append(line);
+                }
+                bufferedReader.close();
+                return stringBuilder.toString();
             }
-            fileInputStream.close();
-            return stringBuilder.toString();
-
         }catch (Exception e){
             e.printStackTrace();
         }
