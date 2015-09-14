@@ -85,7 +85,7 @@ public class Main6Activity extends AppCompatActivity implements View.OnClickList
                     targetFile.createNewFile();
                     targetFile.setWritable(true);
                 }
-                FileOutputStream randomAccessFile = new FileOutputStream(targetFile);
+                FileOutputStream randomAccessFile = new FileOutputStream(targetFile,true);
                 randomAccessFile.write(s.getBytes());
                 randomAccessFile.close();
             }
