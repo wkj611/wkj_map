@@ -54,6 +54,12 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/button12"
         android:text="file"/>
+    <Button
+        android:id="@+id/camera"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/file"
+        android:text="camera"/>
 
 
 </RelativeLayout>
